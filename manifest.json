@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Drag&Drop For Forum",
+  "version": "1.0",
+  "description": "Removes the 'invisible' class from input element to allow drag and drop.",
+  "permissions": ["scripting", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://forum.minerva.edu/app/assignments/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": ["http://forum.minerva.edu/*"]
+}
